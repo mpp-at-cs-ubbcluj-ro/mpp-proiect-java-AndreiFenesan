@@ -42,4 +42,14 @@ public class Donor extends Entity<Long> {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Donor{" +
+                "name='" + name + '\'' +
+                ", mailAddress='" + mailAddress + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }

@@ -2,18 +2,21 @@ package org.example.models;
 
 public class Donation extends Entity<Long> {
     private double amount;
-    private Long donorId;
+    private Long charityCaseId;
+    private Donor donor;
 
-    public Donation(Long donorId, double amount) {
-        super(null);
+    public Donation(Long aLong, double amount, Long charityCaseId, Donor donor) {
+        super(aLong);
         this.amount = amount;
-        this.donorId = donorId;
+        this.charityCaseId = charityCaseId;
+        this.donor = donor;
     }
 
-    public Donation(Long id, Long donorId, double amount) {
-        super(id);
+    public Donation(double amount, Long charityCaseId, Donor donor) {
+        super(null);
         this.amount = amount;
-        this.donorId = donorId;
+        this.charityCaseId = charityCaseId;
+        this.donor = donor;
     }
 
     public double getAmount() {
@@ -24,11 +27,29 @@ public class Donation extends Entity<Long> {
         this.amount = amount;
     }
 
-    public Long getDonorId() {
-        return donorId;
+    public Donor getDonor() {
+        return donor;
     }
 
-    public void setDonorId(Long donorId) {
-        this.donorId = donorId;
+    public void setDonor(Donor donor) {
+        this.donor = donor;
+    }
+
+    public Long getCharityCaseId() {
+        return charityCaseId;
+    }
+
+    @Override
+    public String toString() {
+        return "Donation{" +
+                "amount=" + amount +
+                ", charityCaseId=" + charityCaseId +
+                ", donor=" + donor +
+                ", id=" + id +
+                '}';
+    }
+
+    public void setCharityCaseId(Long charityCaseId) {
+        this.charityCaseId = charityCaseId;
     }
 }

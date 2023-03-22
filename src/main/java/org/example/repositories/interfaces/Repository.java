@@ -1,4 +1,4 @@
-package org.example.models.repositories;
+package org.example.repositories.interfaces;
 
 import org.example.models.Entity;
 
