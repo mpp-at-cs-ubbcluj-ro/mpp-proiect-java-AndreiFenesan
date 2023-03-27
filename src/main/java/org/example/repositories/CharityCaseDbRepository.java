@@ -56,7 +56,21 @@ public class CharityCaseDbRepository implements CharityCaseRepository {
     }
 
     @Override
-    public Optional<CharityCase> findOneById(Long aLong) {
+    public Optional<CharityCase> findOneById(Long id) {
+        logger.info("Finding charity case by id {}", id);
+        String query = "SELECT * FROM tables.charitycase where id = ?";
+        Connection connection = jdbcUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setLong(1, id);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return Optional.of(extractCharityCaseFromResultSet(resultSet));
+                }
+            }
+        } catch (SQLException exception) {
+            logger.error("Error in getting all CharityCases: {}", exception.getMessage());
+        }
+        logger.info("No charity case found with id {}", id);
         return Optional.empty();
     }
 
