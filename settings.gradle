@@ -1,0 +1,9 @@
+rootProject.name = 'aSD'
+include 'Model'
+include 'Servicies'
+include 'Persistence'
+include 'TeledonServer'
+include 'Networking'
+include 'untitled'
+include 'haiClient'
+
