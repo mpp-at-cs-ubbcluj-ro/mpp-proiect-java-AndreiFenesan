@@ -16,6 +16,9 @@ dependencies {
     implementation project(":Networking")
     implementation project(":Servicies")
     implementation project(":Persistence")
+    implementation project(":Model")
+    implementation group: 'org.hibernate.orm', name: 'hibernate-core', version: '6.2.2.Final'
+
 }
 
 test {

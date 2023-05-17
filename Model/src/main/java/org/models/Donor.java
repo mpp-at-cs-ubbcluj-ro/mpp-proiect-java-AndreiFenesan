@@ -1,6 +1,10 @@
 package org.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
 
+@jakarta.persistence.Entity
+@Table(name = "donor",schema = "tables")
 public class Donor extends Entity<Long> {
     private String name;
     private String mailAddress;
@@ -20,6 +24,10 @@ public class Donor extends Entity<Long> {
         this.phoneNumber = phoneNumber;
     }
 
+    public Donor() {
+        super(0L);
+    }
+
     public String getName() {
         return name;
     }
@@ -28,6 +36,7 @@ public class Donor extends Entity<Long> {
         this.name = name;
     }
 
+    @Column(name = "email")
     public String getMailAddress() {
         return mailAddress;
     }

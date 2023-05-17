@@ -4,7 +4,7 @@ package org.services;
 import org.models.Donor;
 import org.models.dtos.CharityCaseDto;
 
-public interface ITeledonService {
+public interface ITeledonService extends Observable {
     Iterable<CharityCaseDto> getAllCharityCases();
 
     void addNewDonation(Long charityCaseId, String name, String emailAddress, String phoneNumber, Double donationAmount) throws ServiceException;

@@ -20,6 +20,7 @@ dependencies {
     implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
     implementation project(':Servicies')
     implementation project(':Model')
+    implementation group: 'org.hibernate.orm', name: 'hibernate-core', version: '6.2.2.Final'
 }
 
 test {

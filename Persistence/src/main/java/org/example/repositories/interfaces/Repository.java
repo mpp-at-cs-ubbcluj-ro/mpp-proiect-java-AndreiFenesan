@@ -4,9 +4,10 @@ package org.example.repositories.interfaces;
 
 import org.models.Entity;
 
+import java.io.Serializable;
 import java.util.Optional;
 
-public interface Repository<ID, T extends Entity<ID>> {
+public interface Repository<ID extends Serializable, T extends Entity<ID>> {
     /**
      *
      * @param entity entity to save
